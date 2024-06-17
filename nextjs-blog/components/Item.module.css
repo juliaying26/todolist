@@ -1,0 +1,26 @@
+.list_item_div {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox_and_item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.list_item_div svg {
+  height: 21px;
+  width: 21px;
+}
+
+.list_item {
+  flex-grow: 1;
+  max-width: 240px;
+}

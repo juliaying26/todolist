@@ -50,8 +50,6 @@ export default function Home() {
           themeOptions={themeOptions}
         />
       </main>
-
-      <footer></footer>
     </div>
   );
 }

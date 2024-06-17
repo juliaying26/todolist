@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/Header";
 import TasksDone from "../components/TasksDone";
 import Form from "../components/Form";
@@ -26,9 +25,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>To Do List!</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
-
       <main>
         <ThemePicker
           currentTheme={theme}

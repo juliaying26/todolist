@@ -13,14 +13,14 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  line-height: 1.2;
 }
 
 .list_item_div svg {
-  height: 21px;
-  width: 21px;
+  height: 27px;
+  width: 27px;
 }
 
 .list_item {
   flex-grow: 1;
-  max-width: 240px;
 }

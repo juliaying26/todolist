@@ -11,15 +11,15 @@ export default function TasksDone({
     <div className={styles.tasks_done}>
       {completed_todos} / {total_todos} tasks completed
       <div className={styles.completion_bar}>
-        <svg viewBox="0 0 400 12">
+        <svg viewBox="0 0 430 14">
           <rect
-            width="400px"
-            height="12px"
+            width="430px"
+            height="14px"
             fill={themeOptions[theme].secondary}
           ></rect>
           <rect
-            width={400 * percentage + "px"}
-            height="12px"
+            width={430 * percentage + "px"}
+            height="14px"
             fill={themeOptions[theme].primary}
           ></rect>
         </svg>

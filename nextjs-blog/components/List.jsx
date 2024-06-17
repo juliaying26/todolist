@@ -13,7 +13,7 @@ export default function List({ todos, setTodos, theme, themeOptions }) {
 
   return (
     <div className={styles.list}>
-      <div>
+      <div className={styles.items_list}>
         {todos.map((item, index) => (
           <Item
             key={index}

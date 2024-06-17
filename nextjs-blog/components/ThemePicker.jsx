@@ -12,10 +12,9 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
   };
 
   return (
-    <div>
+    <div className={styles.theme_picker}>
       <h2>Choose a Theme:</h2>
-
-      <div className={styles.theme_picker}>
+      <div className={styles.current_theme}>
         {themeOptions.map((theme, index) => {
           return (
             currentTheme === index && (

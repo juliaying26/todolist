@@ -29,11 +29,11 @@ export default function Item({ item, setTodos, theme, themeOptions }) {
               : { fill: themeOptions[theme].secondary }
           }
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 22 22"
+          viewBox="0 0 30 30"
           preserveAspectRatio="xMinYMin"
           cursor="pointer"
         >
-          <rect width="21px" height="21px" x="1" y="1" rx="4" ry="4" />
+          <rect width="28px" height="28px" x="1" y="1" rx="5" ry="5" />
         </svg>
         <p
           style={item.isComplete ? { textDecoration: "line-through" } : {}}

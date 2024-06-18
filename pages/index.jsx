@@ -26,10 +26,16 @@ export default function Home() {
   // get todos from local storage
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
+    const storedTheme = localStorage.getItem("theme");
     if (storedTodos) {
       setTodos(JSON.parse(storedTodos));
     } else {
       localStorage.setItem("todos", JSON.stringify([]));
+    }
+    if (storedTheme) {
+      setTheme(JSON.parse(storedTheme));
+    } else {
+      localStorage.setItem("theme", JSON.stringify(0));
     }
   }, []);
 

@@ -4,11 +4,14 @@ import { useState } from "react";
 
 export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
   const [showMore, setShowMore] = useState(false);
+
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
+
   const handleTheme = (themeIndex) => {
     setTheme(themeIndex);
+    localStorage.setItem("theme", JSON.stringify(themeIndex));
   };
 
   return (

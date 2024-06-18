@@ -14,6 +14,11 @@
   margin: 0;
   padding: 0;
   line-height: 1.2;
+  position: relative;
+}
+
+.checkmark {
+  position: absolute;
 }
 
 .list_item_div svg {

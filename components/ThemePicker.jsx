@@ -15,8 +15,9 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
   };
 
   return (
-    <div className={styles.theme_picker}>
+    <>
       <h2>Choose a Theme:</h2>
+
       <div className={styles.current_theme} onClick={handleShowMore}>
         {/* current theme */}
         {themeOptions.map((theme, index) => {
@@ -61,8 +62,9 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
       </div>
       {/* other theme buttons */}
       <div className={styles.color_buttons}>
-        {showMore
-          ? themeOptions.map((theme, index) => {
+        {showMore ? (
+          <div className={styles.color_buttons_after_click}>
+            {themeOptions.map((theme, index) => {
               return (
                 currentTheme !== index && (
                   <Button
@@ -74,9 +76,10 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
                   </Button>
                 )
               );
-            })
-          : null}
+            })}
+          </div>
+        ) : null}
       </div>
-    </div>
+    </>
   );
 }

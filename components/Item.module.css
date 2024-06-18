@@ -26,6 +26,11 @@
   width: 27px;
 }
 
+.trash_icon {
+  height: 25px !important;
+  width: 25px !important;
+}
+
 .list_item {
   flex-grow: 1;
 }

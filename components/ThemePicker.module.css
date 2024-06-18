@@ -1,17 +1,21 @@
 .color_buttons {
-  display: flex;
-  gap: 10px;
-  padding-top: 12px;
+  display: grid;
+  gap: 6px;
   max-width: 430px;
+  margin-bottom: 52px;
+}
+
+.color_buttons_after_click {
+  display: flex;
+  gap: 6px;
+  max-width: 430px;
+  margin-bottom: -40px;
 }
 
 .current_theme {
   display: flex;
   gap: 7px;
-}
-
-.theme_picker {
-  padding-bottom: 25px;
+  padding-bottom: 6px;
 }
 
 .caret {

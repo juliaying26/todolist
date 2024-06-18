@@ -8,7 +8,6 @@ body {
   line-height: 1.6;
   font-size: 26px;
   /* display: flex; */
-  overflow-x: hidden;
 }
 
 * {

@@ -73,7 +73,7 @@ export default function Item({ item, todos, setTodos, theme, themeOptions }) {
         width="16"
         height="16"
         fill={themeOptions[theme].primary}
-        class="bi bi-trash3-fill"
+        className={styles.trash_icon}
         viewBox="0 0 16 16"
         onClick={handleDelete}
         cursor="pointer"

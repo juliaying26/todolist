@@ -24,18 +24,20 @@ export default function TasksDone({
           ></rect>
         </svg>
       </div>
-      <svg viewBox="0 0 430 14">
-        <rect
-          width="430px"
-          height="14px"
-          fill={themeOptions[theme].secondary}
-        ></rect>
-        <rect
-          width={430 * percentage + "px"}
-          height="14px"
-          fill={themeOptions[theme].primary}
-        ></rect>
-      </svg>
+      <div className={styles.completion_bar_2}>
+        <svg viewBox="0 0 430 14">
+          <rect
+            width="430px"
+            height="14px"
+            fill={themeOptions[theme].secondary}
+          ></rect>
+          <rect
+            width={430 * percentage + "px"}
+            height="14px"
+            fill={themeOptions[theme].primary}
+          ></rect>
+        </svg>
+      </div>
     </div>
   );
 }

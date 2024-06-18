@@ -7,5 +7,6 @@
   display: flex;
   padding-top: 3px;
   padding-bottom: 15px;
+  width: 430px;
   max-width: 430px;
 }

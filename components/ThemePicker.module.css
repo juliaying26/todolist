@@ -2,11 +2,12 @@
   display: flex;
   gap: 10px;
   padding-top: 12px;
+  max-width: 430px;
 }
 
 .current_theme {
   display: flex;
-  gap: 10px;
+  gap: 7px;
 }
 
 .theme_picker {

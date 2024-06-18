@@ -15,6 +15,7 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
     <div className={styles.theme_picker}>
       <h2>Choose a Theme:</h2>
       <div className={styles.current_theme} onClick={handleShowMore}>
+        {/* current theme */}
         {themeOptions.map((theme, index) => {
           return (
             currentTheme === index && (
@@ -28,6 +29,7 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
             )
           );
         })}
+        {/* caret */}
         <div className={styles.caret} onClick={() => handleShowMore()}>
           {!showMore ? (
             <svg
@@ -54,6 +56,7 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
           )}
         </div>
       </div>
+      {/* other theme buttons */}
       <div className={styles.color_buttons}>
         {showMore
           ? themeOptions.map((theme, index) => {

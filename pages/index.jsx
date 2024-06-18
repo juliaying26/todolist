@@ -7,6 +7,7 @@ import Form from "../components/Form";
 import List from "../components/List";
 import styles from "../styles/Home.module.css";
 import ThemePicker from "../components/ThemePicker";
+import ListWithDragDrop from "../components/ListWithDragDrop";
 
 import { useState, useEffect } from "react";
 

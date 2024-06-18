@@ -1,3 +1,5 @@
+"use client";
+
 import Head from "next/head";
 import Header from "../components/Header";
 import TasksDone from "../components/TasksDone";
@@ -6,7 +8,7 @@ import List from "../components/List";
 import styles from "../styles/Home.module.css";
 import ThemePicker from "../components/ThemePicker";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const themeOptions = [
   { primary: "#7B68EE", secondary: "#E6E6FA", name: "Periwinkle" },
@@ -20,6 +22,16 @@ const themeOptions = [
 export default function Home() {
   const [todos, setTodos] = useState([]);
   const [theme, setTheme] = useState(0);
+
+  // get todos from local storage
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    } else {
+      localStorage.setItem("todos", JSON.stringify([]));
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -43,7 +55,12 @@ export default function Home() {
           theme={theme}
           themeOptions={themeOptions}
         />
-        <Form setTodos={setTodos} theme={theme} themeOptions={themeOptions} />
+        <Form
+          todos={todos}
+          setTodos={setTodos}
+          theme={theme}
+          themeOptions={themeOptions}
+        />
         <List
           todos={todos}
           setTodos={setTodos}

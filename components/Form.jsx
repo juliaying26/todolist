@@ -1,14 +1,19 @@
 import styles from "./Form.module.css";
 import Button from "./Button";
 
-export default function Form({ setTodos, theme, themeOptions }) {
+export default function Form({ todos, setTodos, theme, themeOptions }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const taskName = event.target.task.value;
-    setTodos((prev) => [
-      ...prev,
-      { taskName: taskName, id: self.crypto.randomUUID(), isComplete: false },
-    ]);
+    const newTodo = {
+      taskName: taskName,
+      id: self.crypto.randomUUID(),
+      isComplete: false,
+    };
+    setTodos((prev) => [...prev, newTodo]);
+    // handle task addition to local storage
+    const updatedToDoList = JSON.stringify([...todos, newTodo]);
+    localStorage.setItem("todos", updatedToDoList);
     event.target.reset();
   };
 

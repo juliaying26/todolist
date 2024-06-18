@@ -5,10 +5,15 @@ import Button from "./Button";
 export default function List({ todos, setTodos, theme, themeOptions }) {
   const handleDeleteAll = () => {
     setTodos([]);
+    // set local storage to empty string
+    localStorage.setItem("todos", "");
   };
 
   const handleDeleteDone = () => {
-    setTodos(todos.filter((item) => !item.isComplete));
+    const updatedTodos = todos.filter((item) => !item.isComplete);
+    setTodos(updatedTodos);
+    // handle delete done tasks from local storage
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   return (
@@ -18,6 +23,7 @@ export default function List({ todos, setTodos, theme, themeOptions }) {
           <Item
             key={index}
             item={item}
+            todos={todos}
             setTodos={setTodos}
             theme={theme}
             themeOptions={themeOptions}

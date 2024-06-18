@@ -2,17 +2,27 @@ import { useState } from "react";
 import styles from "./Item.module.css";
 import Button from "./Button";
 
-export default function Item({ item, setTodos, theme, themeOptions }) {
+export default function Item({ item, todos, setTodos, theme, themeOptions }) {
   const handleCheck = () => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === item.id ? { ...todo, isComplete: !todo.isComplete } : todo
       )
     );
+    // handle task check from local storage
+    const updatedTodos = JSON.stringify(
+      todos.map((todo) =>
+        todo.id === item.id ? { ...todo, isComplete: !todo.isComplete } : todo
+      )
+    );
+    localStorage.setItem("todos", updatedTodos);
   };
 
-  const handleDelete = (event) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== item.id));
+  const handleDelete = () => {
+    const updatedTodos = todos.filter((todo) => todo.id !== item.id);
+    setTodos(updatedTodos);
+    // handle delete from local storage
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   return (

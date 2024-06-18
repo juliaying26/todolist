@@ -14,7 +14,7 @@ export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
   return (
     <div className={styles.theme_picker}>
       <h2>Choose a Theme:</h2>
-      <div className={styles.current_theme}>
+      <div className={styles.current_theme} onClick={handleShowMore}>
         {themeOptions.map((theme, index) => {
           return (
             currentTheme === index && (

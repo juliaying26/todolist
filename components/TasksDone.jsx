@@ -38,6 +38,7 @@ export default function TasksDone({
           ></rect>
         </svg>
       </div>
+      <p>hi</p>
     </div>
   );
 }

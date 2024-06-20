@@ -1,9 +1,12 @@
 import Button from "./Button";
 import styles from "./ThemePicker.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function ThemePicker({ currentTheme, themeOptions, setTheme }) {
+export default function ThemePicker({ setTheme }) {
   const [showMore, setShowMore] = useState(false);
+  const currentTheme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
 
   const handleShowMore = () => {
     setShowMore(!showMore);

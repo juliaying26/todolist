@@ -1,7 +1,12 @@
 import styles from "./Form.module.css";
 import Button from "./Button";
+import { useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function Form({ todos, setTodos, theme, themeOptions }) {
+export default function Form({ todos, setTodos }) {
+  const theme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const taskName = event.target.task.value;

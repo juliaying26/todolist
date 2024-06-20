@@ -1,8 +1,13 @@
 import Item from "./Item";
 import styles from "./List.module.css";
 import Button from "./Button";
+import { useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function List({ todos, setTodos, theme, themeOptions }) {
+export default function List({ todos, setTodos }) {
+  const theme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
+
   const handleDeleteAll = () => {
     setTodos([]);
     // set local storage to empty string
@@ -20,14 +25,7 @@ export default function List({ todos, setTodos, theme, themeOptions }) {
     <div className={styles.list}>
       <div className={styles.items_list}>
         {todos.map((item, index) => (
-          <Item
-            key={index}
-            item={item}
-            todos={todos}
-            setTodos={setTodos}
-            theme={theme}
-            themeOptions={themeOptions}
-          />
+          <Item key={index} item={item} todos={todos} setTodos={setTodos} />
         ))}
       </div>
       <div className={styles.delete_buttons}>

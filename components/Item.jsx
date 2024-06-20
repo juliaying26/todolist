@@ -1,8 +1,13 @@
 import { useState } from "react";
 import styles from "./Item.module.css";
 import Button from "./Button";
+import { useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function Item({ item, todos, setTodos, theme, themeOptions }) {
+export default function Item({ item, todos, setTodos }) {
+  const theme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
+
   const handleCheck = () => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>

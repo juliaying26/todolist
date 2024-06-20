@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 import ThemePicker from "../components/ThemePicker";
 import ListWithDragDrop from "../components/ListWithDragDrop";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 
 const themeOptions = [
   { primary: "#7B68EE", secondary: "#E6E6FA", name: "Periwinkle" },
@@ -19,6 +19,8 @@ const themeOptions = [
   { primary: "#6DCFE0", secondary: "#E1F5F8", name: "Aqua" },
   { primary: "#EACD53", secondary: "#F8F2D1", name: "Yellow" },
 ];
+
+export const ThemeContext = createContext({ theme: 0 }); // default theme Periwinkle
 
 export default function Home() {
   const [todos, setTodos] = useState([]);
@@ -58,32 +60,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div>
-        <ThemePicker
-          currentTheme={theme}
-          themeOptions={themeOptions}
-          setTheme={setTheme}
-        />
-        <Header />
-        <TasksDone
-          completed_todos={
-            todos.filter((todo) => todo.isComplete === true).length
-          }
-          total_todos={todos.length}
-          theme={theme}
-          themeOptions={themeOptions}
-        />
-        <Form
-          todos={todos}
-          setTodos={setTodos}
-          theme={theme}
-          themeOptions={themeOptions}
-        />
-        <List
-          todos={todos}
-          setTodos={setTodos}
-          theme={theme}
-          themeOptions={themeOptions}
-        />
+        <ThemeContext.Provider
+          value={{ theme: theme, themeOptions: themeOptions }}
+        >
+          <ThemePicker setTheme={setTheme} />
+          <Header />
+          <TasksDone
+            completed_todos={
+              todos.filter((todo) => todo.isComplete === true).length
+            }
+            total_todos={todos.length}
+          />
+          <Form todos={todos} setTodos={setTodos} />
+          <List todos={todos} setTodos={setTodos} />
+        </ThemeContext.Provider>
       </div>
     </div>
   );

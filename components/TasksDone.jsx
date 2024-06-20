@@ -1,11 +1,10 @@
 import styles from "./TasksDone.module.css";
+import { useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function TasksDone({
-  completed_todos,
-  total_todos,
-  theme,
-  themeOptions,
-}) {
+export default function TasksDone({ completed_todos, total_todos }) {
+  const theme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
   let percentage = completed_todos / total_todos;
   return (
     <div className={styles.tasks_done}>

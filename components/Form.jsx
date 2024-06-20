@@ -30,6 +30,7 @@ export default function Form({ todos, setTodos }) {
         name="task"
         maxLength="36"
         required="required"
+        className={styles.input_bar}
       />
       <Button color={themeOptions[theme].primary}>Add</Button>
     </form>

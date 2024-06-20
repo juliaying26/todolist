@@ -73,7 +73,7 @@ export default function Home() {
             total_todos={todos.length}
           />
           <Form todos={todos} setTodos={setTodos} />
-          <List todos={todos} setTodos={setTodos} />
+          <ListWithDragDrop todos={todos} setTodos={setTodos} />
         </ThemeContext.Provider>
       </div>
     </div>

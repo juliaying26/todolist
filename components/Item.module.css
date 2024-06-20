@@ -21,6 +21,18 @@
   position: absolute;
 }
 
+.grippy_container {
+  display: flex;
+  align-items: center;
+  margin-right: -8px;
+}
+
+.grippy {
+  cursor: grab;
+  height: 31px !important;
+  width: 31px !important;
+}
+
 .list_item_div svg {
   height: 27px;
   width: 27px;
@@ -33,4 +45,9 @@
 
 .list_item {
   flex-grow: 1;
+}
+
+.right_side {
+  display: flex;
+  align-items: center;
 }

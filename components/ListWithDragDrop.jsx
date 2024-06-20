@@ -1,4 +1,3 @@
-import Item from "./Item";
 import styles from "./List.module.css";
 import Button from "./Button";
 import { DndContext } from "@dnd-kit/core";
@@ -9,13 +8,13 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import SortableItem from "./SortableItem";
+import { useContext } from "react";
+import { ThemeContext } from "../pages/index";
 
-export default function ListWithDragDrop({
-  todos,
-  setTodos,
-  theme,
-  themeOptions,
-}) {
+export default function ListWithDragDrop({ todos, setTodos }) {
+  const theme = useContext(ThemeContext).theme;
+  const themeOptions = useContext(ThemeContext).themeOptions;
+
   const handleDeleteAll = () => {
     setTodos([]);
     // set local storage to empty string
@@ -36,6 +35,7 @@ export default function ListWithDragDrop({
       const overIndex = todos.findIndex((todo) => todo.id === over.id);
       const updatedTodos = arrayMove(todos, activeIndex, overIndex);
       setTodos(updatedTodos);
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
     }
   }
 
@@ -50,20 +50,8 @@ export default function ListWithDragDrop({
                 item={item}
                 todos={todos}
                 setTodos={setTodos}
-                theme={theme}
-                themeOptions={themeOptions}
               />
             ))}
-            {/* {todos.map((item, index) => (
-          <Item
-            key={index}
-            item={item}
-            todos={todos}
-            setTodos={setTodos}
-            theme={theme}
-            themeOptions={themeOptions}
-          />
-        ))} */}
           </div>
         </SortableContext>
       </DndContext>

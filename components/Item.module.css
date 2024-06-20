@@ -9,7 +9,7 @@
 
 .checkbox_and_item {
   display: flex;
-  gap: 10px;
+  gap: 11px;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -29,8 +29,8 @@
 
 .grippy {
   cursor: grab;
-  height: 31px !important;
-  width: 31px !important;
+  height: 34px !important;
+  width: 34px !important;
 }
 
 .list_item_div svg {
@@ -39,8 +39,8 @@
 }
 
 .trash_icon {
-  height: 25px !important;
-  width: 25px !important;
+  height: 25.9px !important;
+  width: 25.9px !important;
 }
 
 .list_item {
@@ -50,4 +50,5 @@
 .right_side {
   display: flex;
   align-items: center;
+  gap: 1.5px;
 }

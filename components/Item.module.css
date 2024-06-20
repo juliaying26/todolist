@@ -24,7 +24,7 @@
 .grippy_container {
   display: flex;
   align-items: center;
-  margin-right: -8px;
+  margin-right: -5px;
 }
 
 .grippy {
